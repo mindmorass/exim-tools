@@ -95,4 +95,5 @@ o.jsonipick()
 
 # print extractions as JSON
 
-print json.dumps(o.data)
+for email in o.data:
+    print json.dumps(email)
