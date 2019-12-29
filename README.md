@@ -9,7 +9,7 @@ update the variables to show for the exipick command in the `exipick2json.py` sc
 ```
 o.set_show_vars([
     'message_exim_id',
-	'message_body'
+    'message_body'
 ])
 ```
 
