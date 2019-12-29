@@ -38,7 +38,6 @@ class ExipickJson():
 
     def new_msg(self):
         self.metadata = {}
-        self.metadata['message_headers'] = []
         self.recipients = [] # reset recipents back to a blank slate (new id)
         self.metadata['recipients'] = self.recipients
 
@@ -56,9 +55,6 @@ class ExipickJson():
         if m:
             for r in m.group(1).split(', '):
                 self.recipients.append(r)
-
-    def extract_message_headers(self, message):
-        self.metadata['message_headers'].append(h)
 
     def jsonipick(self):
         # regular expressions for field extraction from exipick message

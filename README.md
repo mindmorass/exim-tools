@@ -4,14 +4,8 @@
 
 ### example usage
 
-update the variables to show for the exipick command in the `exipick2json.py` script.
-
-```
-o.set_show_vars([
-    'message_exim_id',
-    'message_body'
-])
-```
+Optional `--show-vars` can be added by creating a file name called [`exim-show-vars.txt`](exim-show-vars.txt) and dropping the headers you want to see, one per line.
+see https://linux.die.net/man/8/exipick for available variables.
 
 hand in hand, make sure to pass the same variables to the `--show-vars` argument for exipick.  The result will be JSON.
 
