@@ -44,7 +44,7 @@ class ExipickJson():
     # extract value from (key='value') strings as metadata
 
     def extract_metadata(self, message_key, message):
-        regex_string = '{}=\'(.+?)\''.format(message_key)
+        regex_string = '{}=\'(.*?)\''.format(message_key)
         m = re.search(regex_string, message)
         if m:
             self.metadata[message_key] = m.group(1)
@@ -84,8 +84,10 @@ o = ExipickJson()
 
 if os.path.exists('exim-show-vars.txt'):
     f = open('exim-show-vars.txt', 'r')
-    exim_show_vars_list = f.readlines()
-    o.set_show_vars(exim_show_vars_list)
+    exim_show_vars_list = f.read().splitlines()
+    f.close()
+
+o.set_show_vars(exim_show_vars_list)
 
 # run extractions
 
