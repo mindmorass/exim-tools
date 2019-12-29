@@ -4,10 +4,10 @@
 
 ### example usage
 
-Optional `--show-vars` can be added by creating a file name called [`exim-show-vars.txt`](exim-show-vars.txt) and dropping the headers you want to see, one per line.
-see https://linux.die.net/man/8/exipick for available variables.
+Optional `--show-vars` can be added by creating a file name called [`exim-show-vars.txt`](exim-show-vars.txt) in the same directory that houses `exipick2json.py`.
+Within this text file, drop the variables you want to see as JSON, one per line.
 
-hand in hand, make sure to pass the same variables to the `--show-vars` argument for exipick.  The result will be JSON.
+see https://linux.die.net/man/8/exipick for available variables to put into this file.
 
 ```
 exipick -bpa --flatq --unsorted --show-vars message_exim_id,message_body,recipients | ./exipick2json.py
