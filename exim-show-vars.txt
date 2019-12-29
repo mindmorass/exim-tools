@@ -31,3 +31,4 @@ sender_ident
 shown_message_size
 smtp_active_hostname
 header_subject
+header_from
