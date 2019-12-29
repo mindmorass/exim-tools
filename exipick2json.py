@@ -82,39 +82,10 @@ o = ExipickJson()
 # set the exim variables we want to extract 
 # some vars require extra logic such as recipients and message_headers
 
-o.set_show_vars([
-   'authenticated_id',
-   'warning_count',
-   'sender_host_address',
-   'message_size',
-   'spam_score',
-   'sender_set_untrusted',
-   'sender_local',
-   'sender_host_authenticated',
-   'allow_unqualified_recipient',
-   'allow_unqualified_sender',
-   'authenticated_sender',
-   'body_linecount',
-   'body_zerocount',
-   'deliver_frozen_at',
-   'deliver_freeze',
-   'first_delivery',
-   'message_age',
-   'message_body',
-   'message_body_size',
-   'received_protocol',
-   'recipients_count',
-   'recipients_undel_count',
-   'reply_address',
-   'sender_address',
-   'sender_address_domain',
-   'sender_helo_name',
-   'message_linecount',
-   'sender_host_name',
-   'sender_ident',
-   'shown_message_size',
-   'smtp_active_hostname',
-])
+if os.path.exists('exim-show-vars.txt'):
+    f = open('exim-show-vars.txt', 'r')
+    exim_show_vars_list = f.readlines()
+    o.set_show_vars(exim_show_vars_list)
 
 # run extractions
 
