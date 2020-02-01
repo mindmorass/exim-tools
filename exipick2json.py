@@ -96,4 +96,4 @@ o.jsonipick()
 # print extractions as JSON
 
 for email in o.data:
-    print json.dumps(email)
+    print json.dumps(email, ensure_ascii=False)
